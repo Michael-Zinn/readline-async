@@ -1,10 +1,10 @@
-const readline = require('readline');
-const Promise = require('bluebird');
+var readline = require('readline');
+var Promise = require('bluebird');
 
-let mutablePromiseQue = [];
+var mutablePromiseQue = [];
 
-let rl = null;
-let paused = false;
+var rl = null;
+var paused = false;
 
 // Promise String
 module.exports = () => {
@@ -19,7 +19,7 @@ module.exports = () => {
 		});
 
 		rl.on('line', (line) => {
-			let p = mutablePromiseQue.pop();
+			var p = mutablePromiseQue.pop();
 
 			if(mutablePromiseQue.length == 0) {
 				rl.pause();
